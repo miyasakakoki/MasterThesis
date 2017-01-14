@@ -37,12 +37,15 @@ NAPTとは、NetworkAddressPortTranslationの略で、外部のネットワー�
 \end{comment}
 
 \section{SNMPを利用する}
-SNMPとは、SimpleNetworkManagementProtocolの略で、ネットワークに接続された機器を監視するために作られている。
-SNMPでは、
+SNMPとは、SimpleNetworkManagementProtocolの略で、ネットワークに接続された機器を監視・制御するために作られている。
+CPUの状態や起動してからの時間、メモリ使用量等を取得できるが、設定がめんどくさい。
+また、制御もできるため、ネットワーク機器にてブロックされてしまう恐れがある。
+
 
 しかし、これらの手法では、解決に至っていない。
 そこで、通常（？）は、次のような方法で解決を図っている。
 \section{Zabbixを使用する}
+
 \section{Fluentd Elasticksearch Kibanaを利用する}
 \section{Telegraf Influxdb Grafanaを利用する}
 しかし、これらの解決策は大変だ。
