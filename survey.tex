@@ -47,8 +47,21 @@ CPUの状態や起動してからの時間、メモリ使用量等を取得で�
 \section{Zabbixを使用する}
 
 \section{Fluentd Elasticksearch Kibanaを利用する}
+Fluientdとは、ログの転送を目的としたアプリケーション。
+ログを転送する他、場合によってはバッファリング等も行う。
+Elasticksearchとは、データベースの一つ。
+Kibanaとは、可視化ツールの一つで、グラフの描画などが行える。
+しかし、それぞれに対して設定が必要になる。
+また、Fluentdが動くデバイスである必要がある。
+グラフの作成が手動でめんどくさい。。
+
 \section{Telegraf Influxdb Grafanaを利用する}
-しかし、これらの解決策は大変だ。
+Influxdbとは時系列データベースの一つで、データを時系列に沿って整理し格納してくれます。
+TelegrafとはInfluxdbへメモリ使用量等を格納するためのエージェントプログラムです。
+Grafanaとは可視化ツールの一つで、グラフの描画等が行えます。
+これも、FluentdElastickSearchKibanaの時のように、それぞれに対して設定が必要で、デバイスの上でTelegrafが動く必要が有ります。
+また、グラフの描画も手動でめんどくさいです。
+
 
 
 \begin{comment}
