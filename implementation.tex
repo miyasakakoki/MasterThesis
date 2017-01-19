@@ -11,20 +11,69 @@
 
 \section{システムの構成}
 システムの構成は以下のとおりである。
-\subsection{想定するIoT機器}
+\begin{itemize}
+	\item エージェントについて
+		\begin{itemize}
+			\item インストールされる機器\\
+				RaspberryPi(Raspbian jessie)・Intel Edison(yocto linux)にインストールされる。
+			\item 機能\\
+				システムに対し、現在の状態を定期的に通知する。
+			\item 構成要素\\
+				シェルスクリプト一つ（agent.sh)
+		\end{itemize}
+	\item サービスについて
+		\begin{itemize}
+			\item 環境\\
+				Ubuntu16.04 (xenial)
+			\item インストールしたもの\\
+				Python3 Influxdb
+			\item 構成要素とその説明
+				\begin{itemize}
+					\item APIサーバ
+						\begin{itemize}
+							\item 使用したライブラリ\\
+								Falcon
+							\item 機能\\
+								エージェントから送られてきたデータを展開しログ用データベースに格納する。
+							\item ソースコード\\
+								%あとでURL書く
+						\end{itemize}
+					\item ログ用データベース
+						\begin{itemize}
+							\item 使用したもの\\
+								Influxdb
+							\item 機能と説明\\
+								ログを蓄積する。
+								他にもデータベースとしての選択肢があったが、時系列に整理され、検索が早いらしいことから採用した。
+						\end{itemize}
+					\item デバイス情報用データベース
+						\begin{itemize}
+							\item 使用したもの\\
+								sqlite3
+							\item 機能と説明\\
+								デバイスに関する情報を記録する。
+								Pythonから使いやすかったので採用した。
+						\end{itemize}
+					\item Webアプリケーション
+						\begin{itemize}
+							\item 使用したライブラリ\\
+								Flask Bootstrap JQuery
+							\item 機能\\
+								ユーザーからの操作を受け付け、データベースに反映する。
+								また、必要な情報をデータベースから取得し表示する。
+							\item ソースコード\\
+						\end{itemize}
+				\end{itemize}
+		\end{itemize}
+\end{itemize}
+\section{構成部品のそれぞれの動き}
 
 \subsection{監視エージェントの動き}
 監視対象となるIoT機器には、開発した監視エージェントが入っているものとし、起動時に自動でエージェントプログラムを起動するよう設定されているものとする。
-
-
 ログファイルの中には、過去のシーケンス番号が入っている。
-
 監視エージェントは、起動後、ログファイルがあるか確認し、あった場合、ログファイルから過去のシーケンス番号を読み出す。
 無かった場合、過去のシーケンス番号を0にする。
-
 その後、現在のシーケンス番号を0にする。
-
-
 監視エージェントは、監視サービスに対し過去のシーケンス番号と現在のシーケンス番号、自身が現在正常である旨のメッセージを送信する。
 監視サービスから返答があった場合、受理されたとみなし、現在のシーケンス番号を0にする。
 その後、過去のシーケンス番号とログファイルを削除する。
