@@ -79,7 +79,7 @@ URLの設計として次のようになっている。
 		ログインページを返す。
 	\item[POST /login]\mbox{}\\
 		メールアドレスとパスワードを受け取る。\\
-		クッキーからセッションキーを探し、存在すれば既にログインしているとして、/dashboardへのリダイレクトメッセージを返す。\\
+		クッキーからセッションキーを探し、存在すれば既にログインしているとして、/dashboardへのリダイレクトメッセージを返す。
 		データベースにメールアドレスとパスワードの組が存在するか確認し、存在した場合、セッションキーを返す。\\
 		存在しなかった場合、ログインエラーページを返す。
 	\item[GET /logout]\mbox{}\\
@@ -94,9 +94,9 @@ URLの設計として次のようになっている。
 		ログインチェックをし、ランダムにデバイスIDを生成し、JSON形式にまとめたものを返す。
 	\item[POST /api/deviceID]\mbox{}\\
 		ログインチェックをし、受け取ったデバイスIDが既に存在するか確認し、その結果をJSON形式にまとめ、返す。
-	\item[POST /api/device/<DeviceID>]\mbox{}\\
+	\item[POST /api/device/\{DeviceID\}]\mbox{}\\
 		ログインチェックをし、デバイスIDと受け取ったJSONデータから、デバイスの新規作成・編集をし、結果をJSON形式にまとめ、返す。
-	\item[DELETE /api/device/<DeviceID>]\mbox{}\\
+	\item[DELETE /api/device/\{DeviceID\}]\mbox{}\\
 		ログインチェックをし、該当のデバイスIDを持つデバイスをデータベースから削除する。	
 \end{description}
 
