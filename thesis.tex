@@ -1,5 +1,5 @@
 \documentclass[a4paper]{jreport}
-\usepackage[top=30truemm,bottom=30truemm,left=30truemm,right=30truemm]{geometry}
+\usepackage[top=25truemm,bottom=20truemm,left=25truemm,right=20truemm]{geometry}
 \usepackage{url}
 \usepackage{comment}
 
@@ -8,6 +8,7 @@
 \renewcommand{\abstractname}{内容梗概}
 \begin{document}
 \makeatletter
+\renewcommand{\bibname}{参考文献}
 
 \title{IoT機器からの通知に基づいた機器監視サービスの開発}
 \author{15006・宮坂 虹槻}
@@ -16,7 +17,6 @@
 
 \newgeometry{left=2cm,bottom=2cm,top=4cm,right=2cm}
 \begin{titlepage}\begin{center}
-\thispagestyle{plain}
 {\Huge \textbf{修士論文} \par}
 \vspace{1.5cm}
 {\LARGE\gt 題目 \par}
@@ -42,13 +42,14 @@
 \restoregeometry
 \makeatother
 
+\pagenumbering{roman}
 \tableofcontents
 
 \begin{abstract}
-\thispagestyle{plain}
 \input abstract.tex
 \end{abstract}
 
+\pagenumbering{arabic}
 \chapter{はじめに}
 \input introduction.tex
 
@@ -69,7 +70,7 @@
 
 \chapter{謝辞}
 
-\chapter{参考文献}
+%\chapter{参考文献}
 \input reference.tex
 
 \begin{comment}
