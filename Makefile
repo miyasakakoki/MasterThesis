@@ -1,7 +1,7 @@
 
 thesis.pdf: *.tex 
-	platex thesis.tex
-	platex thesis.tex
+	platex -shell-escape thesis.tex
+	platex -shell-escape thesis.tex
 	dvipdfmx thesis.dvi
 
 .PHONY: clean
