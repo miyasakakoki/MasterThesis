@@ -2,8 +2,8 @@
 %（どのような要素で構成されているのか，また，それぞれの役割は何なのか）
 %1.1全体構成（どのような要素で構成され，また，それぞれの役割について簡潔に述べる）
 第3章にて述べた要件に基づき，システムを構築した．
-システムは，エージェントプログラム，機器状態データベース，機器情報データベース，「かおりちゃん」というエージェントプログラム用インターフェースプログラム，Webアプリケーションサーバ，Webアプリケーションから成り立っている．
-エージェントプログラムと「かおりちゃん」，WebアプリケーションサーバとWebアプリケーションは，インターネットを介して通信しあう．
+システムは，エージェントプログラム，機器状態データベース，機器情報データベース，エージェントプログラム用インターフェースプログラム，Webアプリケーションサーバ，Webアプリケーションから成り立っている．
+エージェントプログラムとエージェントプログラム用インターフェース，WebアプリケーションサーバとWebアプリケーションは，インターネットを介して通信しあう．
 \medskip
 
 \begin{figure}[htbp]
@@ -15,28 +15,24 @@
 エージェントプログラムは，IoT機器上で動作するプログラムである．
 定期的に自身の状態を状態蓄積システムへ送信する役割を果たす．
 定期的かつ自発的に状態を送信することで，ネットワーク環境によらない機器の監視を可能にした．
-\medskip
-
+IoT機器として頻繁に使用されるRaspberryPiを想定し作成した。
 「かおりちゃん」とは，エージェントプログラム用インターフェースである．
 各IoT機器上で動くエージェントプログラムから送られてきた状態を，時刻と共に機器状態データベースへ書き込む役割を果たすプログラムで，機器監視サーバー上で動作する．
-\medskip
-
 機器状態データベースとは，機器の状態を時系列に沿って蓄積するデータベースである．
 機器監視サーバー上で動作する．
-\medskip
-
 機器情報データベースとは，機器IDや，機器名，ユーザー名を記録するデータベースである．
 機器監視サーバー上で動作する．
 \medskip
 
-Webアプリケーションとは，ユーザーからの入力を受けユーザーへ表示する他必要な情報を問い合わせる，ブラウザ上で動作するプログラムである．
-\medskip
-
 Webアプリケーションサーバーは，WebページやWebアプリケーション自体を配信する．
-Webアプリケーションからの要求に答え，現在の機器の状態や，機器名等を返答する．
+ユーザーが利用するブラウザからの要求に答え，現在の機器の状態や，機器名等を返答する．
 \medskip
 
-これら各要素が連携することで，機器の監視を容易なものとした．
+Webアプリケーションとは，ブラウザ上で動作するプログラムである．
+ユーザーからの入力を受け付け、ユーザーへ表示する他、必要な機能を問い合わせる。
+\medskip
+
+これら各要素が連携することで，機器の監視を実現している。
 
 \subsection{エージェントプログラム}
 %（エージェントプログラムとは何なのか）
@@ -46,11 +42,10 @@ Webアプリケーションからの要求に答え，現在の機器の状態�
 自発的に状態を報告するため，IoT機器にプライベートアドレスが付与されていても，状態を検知することができる．
 また，HTTPを用いるため，間のネットワークにてブロックされることがない．
 
-\subsection{「かおりちゃん」}
-かおりちゃんとは，エージェントプログラム用インターフェースで，サーバー上で動くプログラムである．
-かおりちゃんの役割は，エージェントプログラムから送信されたメッセージを受け取り，現在の時刻と正常である旨を機器状態データベースへ書き込む．
+\subsection{エージェントプログラム用インターフェース}
+エージェントプログラム用インターフェースとは，サーバー上で動くプログラムである．名前を「かおりちゃん」とした。
+エージェントプログラム用インターフェースの役割は，エージェントプログラムから送信されたメッセージを受け取り，現在の時刻と正常である旨を機器状態データベースへ書き込む．
 また，エージェントプログラムから送られた送信失敗回数から，IoT機器がインターネットから切断された時刻を逆算し，機器状態データベースへ書き込む事も行う．
-
 
 \subsection{機器状態データベース}
 %（とは何なのか）
@@ -106,13 +101,56 @@ Webアプリケーションは，3つのWebページから成り立っている�
 	\item ログインページ\\
 		正当なユーザーであることを確認するために，メールアドレスとパスワードの入力を求める．
 		メールアドレスとパスワードは，Webアプリケーションサーバーへ送信される．
+		\begin{figure}[htbp]
+		\includegraphics[width=16cm]{images/login.png}
+		\caption{ログイン画面}
+		\label{fig:ss_login}
+		\end{figure}
+
 	\item 機器状態一覧ページ\\
 		機器状態を一覧して表示する他，機器の作成や，機器情報の編集，機器の削除等を行う事ができる．
 		現在の機器の状態を取得するため，定期的にWebアプリケーションサーバと通信する．
 		また，機器の作成や機器情報の編集，削除の為，Webアプリケーションサーバと通信する．
+		\begin{figure}[htbp]
+		\includegraphics[width=16cm]{images/screenshot_summary1.png}
+		\caption{機器状態一覧画面}
+		\label{fig:ss_sum1}
+		\end{figure}
+
+		\begin{figure}[htbp]
+		\includegraphics[width=16cm]{images/screenshot_summary2.png}
+		\caption{機器状態一覧画面（小さく表示）}
+		\label{fig:ss_sum2}
+		\end{figure}
+
+		\begin{figure}[htbp]
+		\includegraphics[width=16cm]{images/screenshot_more.png}
+		\caption{機器状態詳細表示}
+		\label{fig:ss_more}
+		\end{figure}
+
+		\begin{figure}[htbp]
+		\includegraphics[width=16cm]{images/screenshot_add.png}
+		\caption{機器追加ダイアログ}
+		\label{fig:ss_add}
+		\end{figure}
+
+		\begin{figure}[htbp]
+		\includegraphics[width=16cm]{images/screenshot_mod.png}
+		\caption{機器情報編集ダイアログ}
+		\label{fig:ss_mod}
+		\end{figure}
+
+
 	\item 過去の機器状態一覧ページ\\
 		過去の機器状態を時刻と共に整理し，一覧表示するページである．
 		現在の機器の状態を取得するため，定期的にWebアプリケーションサーバと通信をする．
+		\begin{figure}[htbp]
+		\includegraphics[width=16cm]{images/screenshot_logs.png}
+		\caption{過去の状態表示ページ}
+		\label{fig:ss_logs}
+		\end{figure}
+
 \end{itemize}
 
 \section{エージェントプログラムの実装}
@@ -131,7 +169,7 @@ Webアプリケーションは，3つのWebページから成り立っている�
 \end{enumerate}
 
 
-\section{「かおりちゃん」の実装}
+\section{エージェントプログラム用インターフェース「かおりちゃん」の実装}
 「かおりちゃん」の役割は，エージェントプログラムから送信失敗回数を受け取り，時刻と正常である旨を機器状態データベースへ書き込むこと，
 また，エージェントプログラムから送られた送信失敗回数から，インターネットより切断された時刻を逆算し，機器状態データベースへ書き込む事である．
 Falconと呼ばれるAPIの作成に特化したフレームワークを使用し，Pythonにて実装した．
@@ -293,49 +331,6 @@ HTTP上でやり取りするデータの形式としては，Javascript Object N
 	\end{enumerate}
 \end{itemize}
 
-以下に実装したサービスのスクリーンショットを提示する．
-
-\begin{figure}[htbp]
-\includegraphics[width=16cm]{images/login.png}
-\caption{ログイン画面}
-\label{fig:ss_login}
-\end{figure}
 
 
-\begin{figure}[htbp]
-\includegraphics[width=16cm]{images/screenshot_summary1.png}
-\caption{機器状態一覧画面}
-\label{fig:ss_sum1}
-\end{figure}
 
-
-\begin{figure}[htbp]
-\includegraphics[width=16cm]{images/screenshot_summary2.png}
-\caption{機器状態一覧画面（小さく表示）}
-\label{fig:ss_sum2}
-\end{figure}
-
-\begin{figure}[htbp]
-\includegraphics[width=16cm]{images/screenshot_more.png}
-\caption{機器状態詳細表示}
-\label{fig:ss_more}
-\end{figure}
-
-\begin{figure}[htbp]
-\includegraphics[width=16cm]{images/screenshot_add.png}
-\caption{機器追加ダイアログ}
-\label{fig:ss_add}
-\end{figure}
-
-
-\begin{figure}[htbp]
-\includegraphics[width=16cm]{images/screenshot_mod.png}
-\caption{機器情報編集ダイアログ}
-\label{fig:ss_mod}
-\end{figure}
-
-\begin{figure}[htbp]
-\includegraphics[width=16cm]{images/screenshot_logs.png}
-\caption{過去の状態表示ページ}
-\label{fig:ss_logs}
-\end{figure}
