@@ -1,5 +1,5 @@
 
-thesis.pdf: *.tex 
+thesis.pdf: *.tex images/*.png
 	platex -shell-escape thesis.tex
 	platex -shell-escape thesis.tex
 	dvipdfmx thesis.dvi
