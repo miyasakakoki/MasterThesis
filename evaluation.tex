@@ -8,7 +8,7 @@
 ユーザーテストは，1台のIoT機器で成り立っているIoTサービスを想定し行った．
 IoT機器には，RaspberryPiを使用する。
 図\ref{fig:device}は使用したRaspberryPi2と，IntelEdisonである。
-IntelEdisonは今回は使用していないが，エージェントプログラムは動作するはずである。
+今回は、IntelEdisonは使用していないが，参考の為に上げた。
 %IoT機器の図
 \begin{figure}[htbp]
 \includegraphics[width=14cm]{images/device.png}
@@ -23,7 +23,8 @@ RaspberyPi2は無線LANインターフェースを持たないので，バファ
 
 \subsection{実験結果}
 IoT機器の監視については問題なく動作した事を確認した。
-
+機器の電源を抜くと、1分程度で表示状態が変わり、
+数分後、機器の電源を再び入れると、2分程度で表示状態が戻ることを確認した。
 
 \section{IoT機器を監視までの手順の比較}
 従来手法による監視の手間と，本サービスによる監視の手間を比較する．
