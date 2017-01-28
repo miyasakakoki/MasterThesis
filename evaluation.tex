@@ -5,9 +5,9 @@
 必要となる機能が実装されていることを確認するため、検証を行った。
 
 \subsection{シナリオ}
-ユーザーテストは，3台のIoT機器で成り立っているIoTサービスを想定し行った．
-IoT機器には，RaspberryPiとIntelEdisonが使用する。
-図\ref{fig:device}は使用したRaspberryPiとIntelEdisonである。
+ユーザーテストは，1台のIoT機器で成り立っているIoTサービスを想定し行った．
+IoT機器には，RaspberryPiを使用する。
+図\ref{fig:device}は使用したRaspberryPiと，IntelEdisonである。
 
 %IoT機器の図
 \begin{figure}[htbp]
@@ -16,12 +16,10 @@ IoT機器には，RaspberryPiとIntelEdisonが使用する。
 \label{fig:device}
 \end{figure}
 
-期間は2017年1月28日正午から3時間行い、途中何度か電源を抜き、正常に検知することを確認する。
-その後、電源が抜けていた期間について、IoT機器の記録とサービスの表示を確認する。
-
-\subsection{検証の経過}
-
+期間は2017年1月28日正午から1時間行い、途中何度か電源を抜き、正常に検知することを確認する。
+その後、電源が抜けていた期間について、IoT機器の記録を確認する。
 \subsection{}
+
 
 
 \section{手順の比較}
@@ -46,14 +44,14 @@ IoT機器には，RaspberryPiとIntelEdisonが使用する。
 \begin{enumerate}
 \item IoT機器にTelegrafをインストールする
 \item IoT機器にインストールされたTelegrafの接続先の設定を行う
-\item 各IoT機器固有のIDをTelegrafに設定する．＊
+\item 各IoT機器固有のIDをTelegrafに設定する．
 \item Grafanaにログインする．
 \item Grafanaへ，現在の状態を表示する為のデータベースクエリを入力する．
 \item Grafanaへ，過去の状態を表示するためのデータベースクエリを入力する．
 \item 各描画パネルに対し，機器名を設定する．
 \end{enumerate}
 
-本サービスでは次の手順を踏むことで機器
+本サービスでは次の手順を踏む。
 \begin{enumerate}
 \item 本サービスにログインする
 \item 本サービスの機器追加ボタンを押し，機器IDをメモ（コピー）する．
@@ -64,8 +62,6 @@ IoT機器には，RaspberryPiとIntelEdisonが使用する。
 
 比較すると，Grafanaへデータベースクエリを入力する作業が，なくなっている．
 代わりに，自動起動の為の設定ファイルを設定する手順が増えている．
-
-
 
 \section{考察}
 ユーザーテストから本システムは，ある程度有効であることが分かったが，以下の点について課題があることが分かった．
