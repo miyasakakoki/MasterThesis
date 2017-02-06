@@ -118,9 +118,9 @@ IoTサービスの円滑な提供や今後の発展の為には，機器が設�
 
 
 \section{岡本商店街での事例}
-2016年1月X日から2016年2月X日まで、NPO法人コミュニティリンクへのインターンシップの一環として、実験を行った。
+2015年12月8日から2016年2月26日まで、NPO法人コミュニティリンクへのインターンシップの一環として、実験を行った。
 人流観測を行い、結果を分析し商店街の活性化に役立てるという趣旨で行った。
-人流観測は、2016年2月7日から2016年2月13日の7日間行った。
+人流観測は、2016年2月7日から2016年3月14日まで行った。
 岡本商店街とは、神戸市東灘区にある阪急岡本駅とJR摂津本山駅の間にある商店街のことである。
 
 人流観測とは、各地点から各地点迄をある時に移動した人数を観測するものである。
@@ -134,14 +134,34 @@ IoTサービスの円滑な提供や今後の発展の為には，機器が設�
 
 本事例では、岡本商店街の5店舗に開発した観測機器を設置し、サーバにて蓄積・分析・可視化を行った。
 開発した観測機器は、RaspberryPiとampsence、rsyncというソフトウェアを利用した。
+図\ref{fig:okamoto_pict1}は、開発した観測機器である。
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/okamoto_pict1.png}
+\caption{岡本商店街人流観測 使用した機器}
+\label{fig:okamoto_pict1}
+\end{figure}
+
 RaspberryPiとは、小型PCの一つで安価に入手が可能である。
 ampsenceとは、プローブパケットを受信しファイルへ記録するソフトウェアである。
+図\ref{fig:okamoto_pict2}は、携帯電話と観測機器、サーバーの関係を表している。
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/okamoto_pict2.png}
+\caption{岡本商店街人流観測 動作イメージ？}
+\label{fig:okamoto_pict2}
+\end{figure}
+
 rsyncとは、ディレクトリの中を同期させるプログラムで、遠隔にあるコンピュータの指定したディレクトリの中と、手元のコンピュータの指定したディレクトリを同期することができる。
 開発した観測機器では、定期的にrsyncを実行するシェルプログラムを置き、起動時に自動で実行するよう設定した。
 それによって、各所に設置された観測機器の情報をサーバー上に集約・蓄積する。
 分析・可視化については、Webアプリケーションを作成した。
 分析については、作成したプログラムがとりおこない、可視化については、作成したWebアプリケーションが行っている。
-このような構成にて、人流観測を行った。
+図\ref{fig:okamoto_ss}は作成したWebアプリケーションである。
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/okamoto_scr1.png}
+\caption{岡本商店街人流観測可視化アプリケーションスクリーンショット}
+\label{fig:okamoto_ss}
+\end{figure}
+
 
 実験としては、個々のRaspberryPi内に、XX分おきに次のような形式のデータをファイルとして書き出し、定期的に実行されるrsyncによって、サーバー側のディレクトリと個々のRaspberryPiのディレクトリを同期させることで収集した。
 
@@ -151,6 +171,24 @@ ampsenceが書き出すデータは次のような形式の連なりとなって
 このようなデータファイルをRaspberryPiに保存し、サーバー側のディレクトリとrsyncを使用して同期することで、データの転送を実現した。
 
 \subsection{実験結果}
+2月7日から3月14日の35日間観測を行ったが、全地点で問題なく観測できたのは、18日間だけであった。
+図\ref{fig:okamoto_dat1}、図\ref{fig:okamoto_dat2}、図\ref{fig:okamoto_dat3}は、期間中の観測人数の推移を示す。
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/okamoto_dat1.png}
+\caption{岡本商店街人流観測　観測1}
+\label{fig:okamoto_dat1}
+\end{figure}
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/okamoto_dat2.png}
+\caption{岡本商店街人流観測　観測2}
+\label{fig:okamoto_dat2}
+\end{figure}
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/okamoto_dat3.png}
+\caption{岡本商店街人流観測　観測3}
+\label{fig:okamoto_dat3}
+\end{figure}
+
 この実験を通して、このような結果が得られた。
 どのような結果が得られたのか
 実験結果
@@ -179,3 +217,20 @@ ampsenceが書き出すデータは次のような形式の連なりとなって
 しかし、各機器の動作状態がすぐに知る事ができれば、夜間等を除き、より良い分析が行えたのではないかと考える。
 
 
+
+
+\section{株式会社SORACOM様へヒアリング}
+インターネットへの接続を担う、通信キャリアが行っている機器の監視について調査するために、株式会社SORACOM様を訪問した。
+株式会社SORACOM様とは、IoTプラットフォームとして、IoT機器の通信からクラウドまでの接続を提供している会社である。
+
+株式会社SORACOM様では、IoT機器向けのインターネット接続サービス「SORACOM Air」を提供している。SORACOM Airでは、SIMカードを利用した通信を使用している。
+そのため、個々の機器をSIMカードに個別に振られたIDによって識別可能である。
+また、どのSIMカードが基地局と通信を行っているのかを見ることで、簡易ながらもIoT機器が動作している事を確認することができる。
+
+しかし、監視にはSORACOM Airを利用していなければならず、また、他のネットワークで稼働している機器の状態をSORACOMが提供するインターフェースで見ることも出来ない。要は、複数のネットワークを利用してIoTを構築している場合、一箇所でまとめて見ることが出来ないという利便性の問題がある。
+
+
+\begin{comment}
+
+
+\end{comment}
