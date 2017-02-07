@@ -1,3 +1,9 @@
+MES=
+
+.PHONY: all
+all:
+	${MAKE} thesis.pdf
+	git add . && git commit -m "${MES}"
 
 thesis.pdf: *.tex images/*.png
 	platex -shell-escape thesis.tex
