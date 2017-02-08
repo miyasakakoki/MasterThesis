@@ -1,22 +1,25 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces IoTサービスの構成図}}{4}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces 岡本商店街人流観測 使用した機器}}{9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces 岡本商店街人流観測 動作イメージ？}}{9}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 岡本商店街人流観測 使用した機器}}{7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 岡本商店街人流観測 動作イメージ？}}{7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 岡本商店街人流観測 使用した機器}}{13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 岡本商店街人流観測 動作イメージ？}}{13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces IoTサービスの構成図}}{14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces IoTサービスの構成図}}{18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces システムのブロック図}}{17}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces ログイン画面}}{20}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 機器状態一覧画面}}{21}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 機器状態一覧画面（小さく表示）}}{22}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 機器状態詳細表示}}{22}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces 機器追加ダイアログ}}{23}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces 機器情報編集ダイアログ}}{24}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 過去の状態表示ページ}}{25}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces エージェントプログラムと「かおりちゃん」の間のメッセージシーケンス図}}{29}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces システムのブロック図}}{21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces ログイン画面}}{24}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 機器状態一覧画面}}{25}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 機器状態一覧画面（小さく表示）}}{26}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 機器状態詳細表示}}{26}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 機器追加ダイアログ}}{27}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 機器情報編集ダイアログ}}{28}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 過去の状態表示ページ}}{29}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces エージェントプログラムと「かおりちゃん」の間のメッセージシーケンス図}}{33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces IoTサービスの構成図}}{32}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces IoTサービスの構成図}}{36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
