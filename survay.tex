@@ -1,3 +1,6 @@
+IoT機器の監視は、次のような要件を満たしている必要があることが分かった。
+
+そこで、従来からある手法にて対応できるか、考えた。
 \section{サーバからの問い合わせによる監視}
 	従来から機器監視に用いられてきた手法として，定期的に機器監視サーバから対象機器に状態を問い合わせる手法がある．
 	機器監視サーバから，監視対象機器上のエージェントプログラムに，現在の状態を問い合わせる事で機器の監視を実現している．
@@ -6,9 +9,15 @@
 	代表的なものとして、次のような物がある。
 	\begin{itemize}
 		\item Ping\\
-			Pingとは、〇〇で△△といったものである。
+			Pingとは、ICMPメッセージをやり取りするプログラムである。
+			ICMPとは、InternetControlManagementProtocolの事で、IPネットワークにおいて、IPパケットの不到達等を通知する為の取り決めである。
+			ICMPには、ICMP Echo Request Echo Replyが定義されており、ICMP Echo Requestを受け取った機器は、ICMP Echo Replyを返さなくてはならない。
+			Pingは、ICMP Echo Requestを指定したIPアドレスに送信し、EchoReplyの有無から、機器の存在や生存を確認する事ができる。
+
 		\item SNMPによる問い合わせ\\
-			SNMPとは、〇〇で△△といったものである。
+			SNMPとは、Simple Network Management Protocolの事で、ネットワークにおいて、機器の状態を確認するために存在する。
+			SNMPでは、
+
 	\end{itemize}
 	
 	この手法を取るメリットは、よく用いられる手法であるので、ツールなどが揃っていて手軽である点である。
