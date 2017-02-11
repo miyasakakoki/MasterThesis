@@ -220,6 +220,16 @@ Falconと呼ばれるAPIの作成に特化したフレームワークを使用�
 \end{center}
 \end{table}
 
+\subsubsection{各テーブルの関連}
+図\ref{fig:erdiagram}は、各テーブルの関連を表している。
+ユーザテーブルと機器情報テーブルは、ユーザIDにて関連付けられている。
+ユーザは0以上の機器情報と関連付けられ、機器情報は一つのユーザーに関連付けられている。
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/ERdiagram.png}
+\caption{機器情報テーブルとユーザテーブルの関連}
+\label{fig:erdiagram}
+\end{figure}
+
 \subsection{機器状態データベース}
 機器状態データベースの役割は，機器の状態を時刻と共に記録・保持することである．
 機器状態データベースには，Influxdbを用いた．
