@@ -4,20 +4,21 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces 岡本商店街人流観測　構成図}}{7}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces 岡本商店街人流観測 使用した機器}}{8}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 株式会社ルナネクサス　サービスイメージ図}}{11}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces システムのブロック図}}{18}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces ログイン画面}}{21}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces 機器状態一覧画面}}{22}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces システムのブロック図}}{19}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces ログイン画面}}{22}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces 機器状態一覧画面}}{23}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces 機器状態一覧画面（小さく表示）}}{23}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces 機器状態詳細表示}}{23}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces 機器状態詳細表示}}{24}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces 機器追加ダイアログ}}{24}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces 機器情報編集ダイアログ}}{25}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces 過去の状態表示ページ}}{26}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces 機器情報テーブルとユーザテーブルの関連}}{28}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{31}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces 機器情報編集ダイアログ}}{24}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 過去の状態表示ページ}}{25}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces 機器情報テーブルとユーザテーブルの関連}}{27}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces IoTサービスの構成図}}{33}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces IoTサービスの構成図}}{32}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
