@@ -16,7 +16,7 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces 機器情報編集ダイアログ}}{25}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces 過去の状態表示ページ}}{26}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces 機器情報テーブルとユーザテーブルの関連}}{28}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces エージェントプログラムと「かおりちゃん」の間のメッセージシーケンス図}}{30}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{31}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces IoTサービスの構成図}}{33}
 \addvspace {10\p@ }
