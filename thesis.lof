@@ -5,17 +5,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces システムのブロック図}}{13}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces ログイン画面}}{16}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces 機器状態一覧画面}}{17}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 機器状態一覧画面（小さく表示）}}{17}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces 機器状態詳細表示}}{18}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces 機器追加ダイアログ}}{18}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces 機器情報編集ダイアログ}}{18}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces 過去の状態表示ページ}}{19}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces 機器情報テーブルとユーザテーブルの関連}}{21}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{24}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces システムのブロック図}}{12}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces ログイン画面}}{15}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces 機器状態一覧画面}}{16}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 機器状態一覧画面（小さく表示）}}{16}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces 機器状態詳細表示}}{17}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces 機器追加ダイアログ}}{17}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces 機器情報編集ダイアログ}}{17}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 過去の状態表示ページ}}{18}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces 機器情報テーブルとユーザテーブルの関連}}{20}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{23}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces IoTサービスの構成図}}{26}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces IoTサービスの構成図}}{25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
