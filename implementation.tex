@@ -252,12 +252,17 @@ Falconと呼ばれるAPIの作成に特化したフレームワークを使用�
 \end{center}
 \end{table}
 
-\subsection{Webサーバーアプリケーション}
-Webサーバーアプリケーションの役割は，与えられたHTTPリクエストを元に，Webページや，各種情報を返却することにある．
+\subsection{監視アプリケーション}
+監視アプリケーションの役割は，与えられたHTTPリクエストを元に，Webページや，各種情報を返却することにある．
 Flaskと呼ばれるWebアプリケーションフレームワークを用いた．Pythonを使用している．
 Webサーバーアプリケーションの設計とWebアプリケーションの設計から，下記の様に実装した．
 やり取り先頭に付いているGETやPOSTはHTTPメソッド，/login等はURLを示している．
-
+図\ref{fig:diag_apps}は、サーバー上で動く監視アプリケーションとユーザのブラウザ上で動くWebアプリケーションとのやり取りを表している。
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/diag_apps.png}
+\caption{エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}
+\label{fig:diag_apps}
+\end{figure}
 
 
 \begin{comment}
