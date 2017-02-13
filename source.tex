@@ -1,0 +1,38 @@
+\subsection{ソースコード概要}
+作成したソースコードはgithubにもアップロードされている。
+\url{https://github.com/miyasakakoki/devicemonit/tree/feature}
+
+作成したプログラムは大きく分けて3つある。
+\begin{itemize}
+\item エージェントプログラム 1点\\
+	\begin{description}
+		\item[agent/agent.sh] エージェントプログラム
+	\end{description}
+\item エージェントプログラム用インターフェース 1点\\
+	\begin{description}
+		\item[api/api.py] エージェントプログラム用インターフェース本体
+	\end{description}
+\item 監視アプリケーション 7点\\
+	\begin{description}
+		\item[ui/devicemonit.py] 監視アプリケーション本体
+		\item[ui/schema.sql] 機器情報データベース作成用スクリプト
+		\item[ui/template/outerlayout.html] Webページ全体のレイアウト用テンプレート
+		\item[ui/template/layout.html] ログインページを除くWebページ用のテンプレート
+		\item[ui/template/login.html] ログインページ
+		\item[ui/template/dashboard.html] 機器情報一覧ページ
+		\item[ui/template/devicelog.html] 過去の機器状態一覧ページ
+	\end{description}
+\end{itemize}
+
+\subsection{エージェントプログラム(agent/agent.sh)}
+
+\subsection{エージェントプログラム用インターフェース(api/api.py)}
+
+\subsection{監視アプリケーション本体(ui/devicemonit.py)}
+
+\subsection{機器情報データベース作成用スクリプト(ui/)
+\item[ui/template/outerlayout.html] Webページ全体のレイアウト用テンプレート
+\item[ui/template/layout.html] ログインページを除くWebページ用のテンプレート
+\item[ui/template/login.html] ログインページ
+\item[ui/template/dashboard.html] 機器情報一覧ページ
+\item[ui/template/devicelog.html] 過去の機器状態一覧ページ
