@@ -63,20 +63,20 @@ Webアプリケーションサーバとは，サーバ上で動作するプロ�
 WebアプリケーションやWebページの配信，Webアプリケーションからの要求の処理などを行う．
 必要に応じて，機器状態データベースと機器情報データベースへアクセスを行う．
 次に，Webアプリケーションとのインターフェースを挙げ，それぞれについて説明する．
-\subsubsection{ログインAPI}
+\subsubsection{ログイン機能}
 Webアプリケーションから，メールアドレスとパスワードを受け取り，	機器情報データベースのユーザーテーブルと照合する．
 照合した結果，ユーザー名とパスワードが合致したユーザーが存在すれば，HTTPクッキーにセッションキーをセットし，機器状態一覧ページへのリダイレクトを返す．
 合致したユーザーが存在しなかった場合，エラーメッセージを返す．
-\subsubsection{ログアウトAPI}
+\subsubsection{ログアウト機能}
 Webアプリケーションに，HTTPクッキーから該当のセッションキーを削除するよう要求する．
-\subsubsection{機器情報・機器状態取得API}
+\subsubsection{機器情報・機器状態取得機能}
 ログインチェックを行った後，機器情報データベースと機器状態データベースより，全IoT機器の機器情報と機器状態を返す．
-\subsubsection{機器ID生成API}
+\subsubsection{機器ID生成機能}
 ログインチェックを行った後，機器情報データベースに存在しない，ランダムな機器IDを返す．
-\subsubsection{機器ID重複チェックAPI}
+\subsubsection{機器ID重複チェック機能}
 ログインチェックを行った後．Webアプリケーションから機器IDを受け取る．
 機器情報データベースに該当の機器IDが存在するかしないかを返信する．
-\subsubsection{機器作成API}
+\subsubsection{機器作成機能}
 ログインチェックを行った後，Webアプリケーションから，機器ID，機器名，機器の詳細と，機器の作成なのか編集なのかの指示を受け取る．
 機器の作成であった場合，
 機器IDに重複が無いことを確認したうえで，機器情報データベースに該当のエントリを作成・機器状態データベースにメジャーメントを作成する．
@@ -84,15 +84,15 @@ Webアプリケーションに，HTTPクッキーから該当のセッション�
 機器の編集であった場合，
 機器情報データベースから，受け取った機器IDを持つものを探しだし，編集する．
 編集できたか否かを返信する．
-\subsubsection{機器削除API}
+\subsubsection{機器削除機能}
 ログインチェックを行った後，Webアプリケーションから，機器IDを受け取る．
 機器情報データベースから，受け取った機器IDを持つものを削除する．
 その後，機器状態データベースから，メジャーメントを削除する．
 削除されたか否かを返信する．
-\subsubsection{過去の機器状態取得API}
+\subsubsection{過去の機器状態取得機能}
 ログインチェックを行った後，機器状態データベースから，全てのIoT機器の過去の状態をまとめ，返信する．
 
-\subsection{Webアプリケーション}
+\subsection{監視アプリケーション}
 Webアプリケーションとは，ユーザーのブラウザ上で動作するアプリケーションである．
 ユーザーへグラフィカルインターフェースを提供する．
 必要に応じて，Webアプリケーションサーバへ必要な情報を要求する．
@@ -114,7 +114,7 @@ Webアプリケーションは，3つのWebページから成り立っている�
 		現在の機器の状態を取得するため，定期的にWebアプリケーションサーバと通信する．
 		また，機器の作成や機器情報の編集，削除の為，Webアプリケーションサーバと通信する．
 
-		図\ref{fig:ss_sum1}・図\ref{fig:ss_sum2}・図\ref{fig:ss_more}はこのページのスクリーンジョットである．
+		図\ref{fig:ss_sum1}・図\ref{fig:ss_sum2}・図\ref{fig:ss_more}はこのページのスクリーンショットである．
 		それぞれ，一覧表示・縮小一覧表示・詳細な情報の表示をしている．
 		図\ref{fig:ss_add}・図\ref{fig:ss_mod}は，それぞれ，機器追加ダイアログ・機器情報編集ダイアログのスクリーンショットである．
 		\begin{figure}[htbp]
@@ -122,25 +122,30 @@ Webアプリケーションは，3つのWebページから成り立っている�
 		\caption{機器状態一覧画面}
 		\label{fig:ss_sum1}
 		\end{figure}
-
+		
+		機器が多くなっても一覧して分かるよう、小さく表示する表示の切替機能も実装した。
 		\begin{figure}[htbp]
 		\includegraphics[width=8cm]{images/screenshot_summary2.png}
 		\caption{機器状態一覧画面（小さく表示）}
 		\label{fig:ss_sum2}
 		\end{figure}
-
+		
+		図\ref{fig:ss_more}は、各機器の詳細を表示している様子である。
+		各機器を模した図形をクリックすることで、詳細表示の切替が行える。
 		\begin{figure}[htbp]
 		\includegraphics[width=8cm]{images/screenshot_more.png}
 		\caption{機器状態詳細表示}
 		\label{fig:ss_more}
 		\end{figure}
 
+		図\ref{fig:ss_add}は、新たに機器を追加する際に表示されるダイアログである。
 		\begin{figure}[htbp]
 		\includegraphics[width=8cm]{images/screenshot_add.png}
 		\caption{機器追加ダイアログ}
 		\label{fig:ss_add}
 		\end{figure}
 
+		図\ref{fig:ss_mod}は、機器の詳細情報を編集する際の画面である。
 		\begin{figure}[htbp]
 		\includegraphics[width=8cm]{images/screenshot_mod.png}
 		\caption{機器情報編集ダイアログ}
@@ -153,7 +158,7 @@ Webアプリケーションは，3つのWebページから成り立っている�
 		現在の機器の状態を取得するため，定期的にWebアプリケーションサーバと通信をする．
 		図\ref{fig:ss_logs}は，スクリーンショットである．
 		\begin{figure}[htbp]
-		\includegraphics[width=16cm]{images/screenshot_logs.png}
+		\includegraphics[width=8cm]{images/screenshot_logs.png}
 		\caption{過去の状態表示ページ}
 		\label{fig:ss_logs}
 		\end{figure}
@@ -251,7 +256,11 @@ Falconと呼ばれるAPIの作成に特化したフレームワークを使用�
 Webサーバーアプリケーションの役割は，与えられたHTTPリクエストを元に，Webページや，各種情報を返却することにある．
 Flaskと呼ばれるWebアプリケーションフレームワークを用いた．Pythonを使用している．
 Webサーバーアプリケーションの設計とWebアプリケーションの設計から，下記の様に実装した．
-先頭に付いているGETやPOSTはHTTPメソッド，/login等はURLを示している．
+やり取り先頭に付いているGETやPOSTはHTTPメソッド，/login等はURLを示している．
+
+
+
+\begin{comment}
 \begin{description}
 	\item[GET /login]\mbox{}\\
 		ログインページを返す．
@@ -277,6 +286,7 @@ Webサーバーアプリケーションの設計とWebアプリケーション�
 	\item[DELETE /api/device/\{DeviceID\}]\mbox{}\\
 		ログインチェックをし，該当のデバイスIDを持つデバイスをデータベースから削除する．	
 \end{description}
+\end{comment}
 
 
 \subsection{Webアプリケーション}
@@ -330,6 +340,13 @@ HTTP上でやり取りするデータの形式としては，Javascript Object N
 \url{https://github.com/miyasakakoki/devicemonit/tree/feature}
 
 \section{サービスによる監視のイメージ}
+従来は、
+VPNを使用して、サーバと各IoT機器を繋ぎ、ssh等でログインすることで、監視を行っていた。
+しかし、本サービスを利用することで、サービスにログインすることで監視を行うことができるようになる。
+
+
+
+\begin{comment}
 %ユーザー目線で，ユーザーは何をしてこれこれこうする　みたいな．
 本サービスで想定するユーザーの動きをまとめる．
 \begin{itemize}
@@ -371,6 +388,7 @@ HTTP上でやり取りするデータの形式としては，Javascript Object N
 	\item すると，機器と機器の過去の状態一覧が表示されるので，該当の機器を見つけ出し，確認する．
 	\end{enumerate}
 \end{itemize}
+\end{comment}
 
 
 
