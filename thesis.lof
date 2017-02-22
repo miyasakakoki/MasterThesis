@@ -4,21 +4,26 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces 株式会社ルナネクサス　サービスイメージ図}}{4}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces 岡本商店街人流観測　構成図}}{5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces システムのブロック図}}{8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces ログイン画面}}{11}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 機器状態一覧画面}}{12}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces 機器状態一覧画面（小さく表示）}}{12}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces 機器状態詳細表示}}{13}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces 機器追加ダイアログ}}{13}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces 機器情報編集ダイアログ}}{13}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces 過去の状態表示ページ}}{14}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces 機器情報テーブルとユーザテーブルの関連}}{16}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{16}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{18}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces サービス構成図}}{8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces エージェントプログラムの動作}}{10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces エージェントプログラム用インターフェースの動作}}{11}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 機器IDの取得/発行・登録時の通信}}{13}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 機器状態の通知/監視時の通信}}{14}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces システムのブロック図}}{15}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces ログイン画面}}{19}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces 機器状態一覧画面}}{19}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces 機器状態一覧画面（小さく表示）}}{20}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces 機器状態詳細表示}}{20}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces 機器追加ダイアログ}}{21}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 機器情報編集ダイアログ}}{21}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces 過去の状態表示ページ}}{21}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces 機器情報テーブルとユーザテーブルの関連}}{23}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{24}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces エージェントプログラムとエージェントプログラム用インターフェースの間のメッセージシーケンス図}}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces IoTサービスの構成図}}{19}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces IoTサービスの構成図}}{27}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces 岡本商店街人流観測　構成図}}{26}
-\contentsline {figure}{\numberline {2}{\ignorespaces 岡本商店街人流観測 使用した機器}}{26}
-\contentsline {figure}{\numberline {3}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{27}
+\contentsline {figure}{\numberline {1}{\ignorespaces 岡本商店街人流観測　構成図}}{35}
+\contentsline {figure}{\numberline {2}{\ignorespaces 岡本商店街人流観測 使用した機器}}{35}
+\contentsline {figure}{\numberline {3}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{36}
