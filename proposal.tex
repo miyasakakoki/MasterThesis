@@ -47,9 +47,13 @@ IoT機器へ個別の設定をすること，監視サーバへIoT機器を登�
 \end{figure}
 \medskip
 
-プログラムを作動させた順に，登録された事を確認し，機器に対してIDの貼り付け等を行う．
+図\ref{fig:prop_diag2}の様にプログラムを作動させた順に，登録された事を確認し，機器に対してIDの貼り付け等を行う．
 また，IoT機器上で動作する提供プログラムは，定期的に監視サーバに対しネットワークの状態や稼働状況等を報告することで，監視を行う．
-%図を入れる
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/prop_diag2.png}
+\caption{サービス構成図}
+\label{fig:prop_diag2}
+\end{figure}
 
 これにより，監視サーバへ各IoT機器を登録する負担と，IoT機器へ個別の設定を行うことを省力化する．
 さらに，通知型でhttpsを用いた通信により，ネットワークの多様性に対応する．
