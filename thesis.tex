@@ -104,15 +104,29 @@ lineskip=-0.5ex
 \input conclution.tex
 
 \chapter*{謝辞}
+\addcontentsline{toc}{chapter}{謝辞}
 \input acknowledgment.tex
 
 %\chapter{参考文献}
 \input reference.tex
 
-
-\appendix
-\section{岡本商店街での事例}
+\chapter*{添付資料　 岡本商店街での事例}
+\addcontentsline{toc}{chapter}{添付資料1　岡本商店街での事例}
 \input okamoto.tex
+
+\chapter*{添付資料　ソースコード}
+\addcontentsline{toc}{chapter}{添付資料2　ソースコード}
+\input source.tex
+
+\begin{comment}
+\chapter*{添付資料　エージェントプログラム用インターフェース　ソースコード
+\addcontentsline{toc}{chapter}{添付資料3　エージェントプログラム用インターフェース　ソースコード}
+
+\chapter*{添付資料　Webアプリケーション　ソースコード}
+\addcontentsline{toc}{chapter}{添付資料4　Webアプリケーション　ソースコード}
+\end{comment}
+
+
 %\section{ソースコード}
 %\input source.tex
 
