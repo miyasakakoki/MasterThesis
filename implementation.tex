@@ -58,7 +58,7 @@ IDの発行機能とは，機器に対し，重複のないIDを発行する機�
 登録機能とは，可視化アプリケーションへ，機器とユーザの関係を登録する機能である．
 機器状態の受け付け機能とは，IoT機器から送信された機器状態等から，過去のどの時点でネットワークから切断されたのか等を逆算し，機器状態データベースへ書き込みむ機能である．
 
-図\ref{interface_flow}は，エージェントプログラムからトークンが送られてきた場合の動作である．
+図\ref{fig:interface_flow}は，エージェントプログラムからトークンが送られてきた場合の動作である．
 \begin{figure}[htbp]
 \includegraphics[width=16cm]{images/interface_flow.png}
 \caption{エージェントプログラム用インターフェースの動作(機器から登録用トークンが送られてきた場合)}
@@ -73,7 +73,7 @@ IoT機器から，トークンが送られてきた場合，インターフェ�
 \item 機器に対し，機器IDを返信
 \end{enumerate}
 
-図\ref{interface_flow2}は，エージェントプログラムから機器の状態が通知されてきた場合の動作である．
+図\ref{fig:interface_flow2}は，エージェントプログラムから機器の状態が通知されてきた場合の動作である．
 \begin{figure}[htbp]
 \includegraphics[width=8cm]{images/interface_flow2.png}
 \caption{エージェントプログラム用インターフェースの動作（機器からの状態の通知があった際）}
@@ -152,7 +152,7 @@ InfluxDBでは，時刻を主キー(index)として扱うので，このよう�
 \section{機器情報データベースの設計}
 機器情報データベースは，ユーザと機器の関係を格納するために使用される．
 ユーザテーブル，機器情報テーブルの２つのテーブルが有り，ユーザに関する情報と，機器に関する情報を分けて記録する．
-図\ref{fig:erdiagrm}は，ユーザテーブルと機器情報テーブルの関連を表す．
+図\ref{fig:erdiagram}は，ユーザテーブルと機器情報テーブルの関連を表す．
 \begin{figure}[htbp]
 \includegraphics[width=8cm]{images/ERdiagram.png}
 \caption{ユーザテーブルと機器情報テーブルの関連}
@@ -190,7 +190,7 @@ InfluxDBでは，時刻を主キー(index)として扱うので，このよう�
 機器名 & name & strign & not null \\ \hline
 機器詳細 & description & string & \\ \hline
 \end{tabular}
-\label{tab:users}
+\label{tab:devices}
 \end{center}
 \end{table}
 
