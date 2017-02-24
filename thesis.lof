@@ -12,7 +12,7 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces エージェントプログラム用インターフェースの動作（機器からの状態の通知があった際）}}{13}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces 機器IDの取得/発行・登録時の通信}}{15}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces 機器状態の通知/監視時の通信}}{15}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces ユーザテーブルと機器情報テーブルの関連}}{16}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces ユーザテーブルと機器情報テーブルの関連}}{17}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces IoTサービスの構成図}}{20}
 \addvspace {10\p@ }
