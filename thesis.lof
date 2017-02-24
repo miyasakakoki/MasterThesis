@@ -8,15 +8,16 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces サービス構成図}}{10}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces エージェントプログラムの動作}}{11}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces エージェントプログラム用インターフェースの動作}}{12}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 機器IDの取得/発行・登録時の通信}}{14}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 機器状態の通知/監視時の通信}}{15}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces ユーザテーブルと機器情報テーブルの関連}}{17}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces エージェントプログラム用インターフェースの動作(機器から登録用トークンが送られてきた場合)}}{12}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces エージェントプログラム用インターフェースの動作（機器からの状態の通知があった際）}}{13}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 機器IDの取得/発行・登録時の通信}}{15}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 機器状態の通知/監視時の通信}}{15}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces ユーザテーブルと機器情報テーブルの関連}}{16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces IoTサービスの構成図}}{21}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces IoTサービスの構成図}}{20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces 岡本商店街人流観測　構成図}}{29}
-\contentsline {figure}{\numberline {2}{\ignorespaces 岡本商店街人流観測 使用した機器}}{29}
-\contentsline {figure}{\numberline {3}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{30}
+\contentsline {figure}{\numberline {1}{\ignorespaces 岡本商店街人流観測　構成図}}{28}
+\contentsline {figure}{\numberline {2}{\ignorespaces 岡本商店街人流観測 使用した機器}}{28}
+\contentsline {figure}{\numberline {3}{\ignorespaces 岡本商店街人流観測可視化アプリケーションスクリーンショット}}{29}

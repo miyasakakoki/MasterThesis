@@ -15,9 +15,9 @@
 
 
 \section{提案サービスの構成}
-提案サービスは図のように、IoT機器上で動作するエージェントプログラム、監視サーバ上で動作するエージェントプログラム用インターフェース、機器状態データベース、機器情報データベース、可視化アプリケーションから構成されている。
+提案サービスは図\ref{fig:blockdiagram}のように、IoT機器上で動作するエージェントプログラム、監視サーバ上で動作するエージェントプログラム用インターフェース、機器状態データベース、機器情報データベース、可視化アプリケーションから構成されている。
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/test.png}
+\includegraphics[width=16cm]{images/prop_diag.png}
 \caption{サービス構成図}
 \label{fig:blockdiagram}
 \end{figure}
@@ -38,7 +38,7 @@ IDの取得機能とは、ユーザから設定されたトークンを監視サ
 
 動作の流れとしては、図のようになる。
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/test.png}
+\includegraphics[width=16cm]{images/agent_flow.png}
 \caption{エージェントプログラムの動作}
 \label{fig:agent_flow}
 \end{figure}
@@ -58,10 +58,10 @@ IDの発行機能とは、機器に対し、重複のないIDを発行する機�
 登録機能とは、可視化アプリケーションへ、機器とユーザの関係を登録する機能である。
 機器状態の受け付け機能とは、IoT機器から送信された機器状態等から、過去のどの時点でネットワークから切断されたのか等を逆算し、機器状態データベースへ書き込みむ機能である。
 
-動作の流れとしては、図のようになる。
+図\ref{interface_flow}は、エージェントプログラムからトークンが送られてきた場合の動作である。
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/test.png}
-\caption{エージェントプログラム用インターフェースの動作}
+\includegraphics[width=16cm]{images/interface_flow.png}
+\caption{エージェントプログラム用インターフェースの動作(機器から登録用トークンが送られてきた場合)}
 \label{fig:interface_flow}
 \end{figure}
 IoT機器から、トークンが送られてきた場合、インターフェースは次のような動作を行う。
@@ -72,6 +72,13 @@ IoT機器から、トークンが送られてきた場合、インターフェ�
 \item 機器情報データベースへ関係を格納（登録）
 \item 機器に対し、機器IDを返信
 \end{enumerate}
+
+図\ref{interface_flow2}は、エージェントプログラムから機器の状態が通知されてきた場合の動作である。
+\begin{figure}[htbp]
+\includegraphics[width=16cm]{images/interface_flow2.png}
+\caption{エージェントプログラム用インターフェースの動作（機器からの状態の通知があった際）}
+\label{fig:interface_flow2}
+\end{figure}
 
 また、IoT機器から機器の状態が送られてきた場合は、次のような動作を行う。
 \begin{enumerate}
@@ -95,16 +102,16 @@ IoT機器から、トークンが送られてきた場合、インターフェ�
 
 \section{エージェントプログラムとエージェントプログラム用インターフェース間の通信}
 エージェントプログラムとエージェントプログラム用インターフェース間の通信には、HTTPSを用いる。
-機器IDの取得/発行・登録時は図のような動作をし、機器状態の通知/監視の際は、図のような動作をする。
+機器IDの取得/発行・登録時は図\ref{fig:inter_program_regist}のような動作をし、機器状態の通知/監視の際は、図\ref{fig:inter_program_monit}のような動作をする。
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/test.png}
+\includegraphics[width=16cm]{images/inter_program_regist.png}
 \caption{機器IDの取得/発行・登録時の通信}
 \label{fig:inter_program_regist}
 \end{figure}
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/test.png}
+\includegraphics[width=16cm]{images/inter_program_monit.png}
 \caption{機器状態の通知/監視時の通信}
-\label{fig:blockdiagram}
+\label{fig:inter_program_monit}
 \end{figure}
 
 各通信の書式はJavaScript Object Notation(JSON)という形式を用いる。
@@ -124,9 +131,17 @@ IoT機器から、トークンが送られてきた場合、インターフェ�
 機器状態データベースは、機器ごとに機器IDと同一の名前のテーブルを作成し、機器状態を管理する。
 この機器IDと同一の名前を持つテーブルを機器状態管理テーブルとする。
 この機器状態管理テーブルは、次のような構造を持つ
+\begin{comment}
+\begin{table}[htb]
+\begin{tabular}[|l|l|l|]
+\hline
+
 
 時刻 time time\\
 状態 stat string( OK | NC | NG )\\
+\end{tabular}
+\end{table}[htb]
+\end{comment}
 
 データベースはInfluxdbを利用した。
 InfluxDBでは、時刻を主キー(index)として扱うので、このような構造になっている。
@@ -140,7 +155,7 @@ InfluxDBでは、時刻を主キー(index)として扱うので、このよう�
 ユーザテーブル、機器情報テーブルの２つのテーブルが有り、ユーザに関する情報と、機器に関する情報を分けて記録する。
 図は、ユーザテーブルと機器情報テーブルの関連を表す。
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/test.png}
+\includegraphics[width=16cm]{images/ERdiagram.png}
 \caption{ユーザテーブルと機器情報テーブルの関連}
 \label{fig:erdiagram}
 \end{figure}
@@ -154,6 +169,7 @@ InfluxDBでは、時刻を主キー(index)として扱うので、このよう�
 ユーザ名 Name string unique not null
 パスワード password string not null
 トークン token string unique
+シーケンス番号 seq integer
 
 機器テーブル Devices
 ユーザID uid integer foreign key primary key
@@ -164,10 +180,9 @@ InfluxDBでは、時刻を主キー(index)として扱うので、このよう�
 ユーザテーブル・機器テーブルは、エージェントプログラム用インターフェース・可視化アプリケーションから参照される。
 データベースには、sqliteを用いた。
 
-また、各テーブルは、次のよなSQL文にて作成した。
+%また、各テーブルは、次のよなSQL文にて作成した。
 %SQL文入れる
-create userrs
-
+%create userrs
 
 \section{可視化アプリケーションの設計}
 可視化アプリケーション次のような構造になっている。
