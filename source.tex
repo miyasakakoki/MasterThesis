@@ -3,7 +3,7 @@
 \url{https://github.com/miyasakakoki/devicemonit/tree/feature}
 
 作成したプログラムは大きく分けて3つある．
-プログラム名の前に付いているのは、ファイル名である。
+プログラム名の前に付いているのは，ファイル名である．
 \begin{itemize}
 \item エージェントプログラム\\
 	\begin{description}
@@ -27,47 +27,47 @@
 
 
 \section*{エージェントプログラム(agent/agent.sh)}
-このプログラムは、IoT機器にインストールされる。シェルスクリプトとして書かれている
-実行の際、引数として、機器IDを指定する。
+このプログラムは，IoT機器にインストールされる．シェルスクリプトとして書かれている
+実行の際，引数として，機器IDを指定する．
 \lstinputlisting[caption=エージェントプログラム,label=agnt]{src/agent/agent.sh}
 
 \section*{エージェントプログラム用インターフェース(api/api.py)}
-このプログラムは、サーバ上で動作する。
-プログラムを作動させるには、Python3,gunicorn等のWSGIサーバがインストールされている必要がある。
-また、ライブラリとしてFalcon,InfluxDBClientがインストールされている必要がある。
-gunicornを用いた際の起動の仕方は次のようになっている。
+このプログラムは，サーバ上で動作する．
+プログラムを作動させるには，Python3,gunicorn等のWSGIサーバがインストールされている必要がある．
+また，ライブラリとしてFalcon,InfluxDBClientがインストールされている必要がある．
+gunicornを用いた際の起動の仕方は次のようになっている．
 %起動方法
 
-以下にソースコードをあげる。
+以下にソースコードをあげる．
 \lstinputlisting[caption=エージェントプログラム用インターフェース,label=interface]{src/api/api.py}
 
 \section*{監視アプリケーション(ui/)}
-監視アプリケーションは、Flaskを用いたサーバーサイドプログラムと、Webブラウザ上で動作するJavascriptが埋め込まれたWebページに分けることができる。
-Webページは、Flaskに内蔵されているレンダリングエンジンによって、複数のテンプレートファイルから生成される。
-アプリケーションの起動には、Python3がインストールされている必要がある。
-また、Flask,InfluxDBClient,sqlite3がインストールされている必要がある。
-サーバマシン上で次の操作を行うことで起動することができる。
+監視アプリケーションは，Flaskを用いたサーバーサイドプログラムと，Webブラウザ上で動作するJavascriptが埋め込まれたWebページに分けることができる．
+Webページは，Flaskに内蔵されているレンダリングエンジンによって，複数のテンプレートファイルから生成される．
+アプリケーションの起動には，Python3がインストールされている必要がある．
+また，Flask,InfluxDBClient,sqlite3がインストールされている必要がある．
+サーバマシン上で次の操作を行うことで起動することができる．
 %起動方法
 
 \subsection*{監視アプリケーション本体(ui/devicemonit.py)}
-このプログラムは、サーバーサイドで動作するプログラムである。
-データベースの初期化の為に機器情報データベース作成用スクリプトを読み込み、実行している。
+このプログラムは，サーバーサイドで動作するプログラムである．
+データベースの初期化の為に機器情報データベース作成用スクリプトを読み込み，実行している．
 \lstinputlisting[caption=監視アプリケーション本体,label=uiapp]{src/ui/devmonit.py}
 
 \subsection*{機器情報データベース作成用スクリプト(ui/schema.sql)}
-このスクリプトは、データベースの初期化の際に、アプリケーション本体によって読み込まれる。
+このスクリプトは，データベースの初期化の際に，アプリケーション本体によって読み込まれる．
 \lstinputlisting[caption=機器情報データベース作成用スクリプト,label=schema]{src/ui/schema.sql}
 
 
 \subsection*{テンプレートファイル郡}
-これらは、利用者がブラウザからアプリケーションにアクセスされた際に、Flaskのレンダリングエンジン（jinja)によって読み込まれ、処理される。
-Javascript、HTML/CSSと、jinja用スクリプトによって書かれている。
+これらは，利用者がブラウザからアプリケーションにアクセスされた際に，Flaskのレンダリングエンジン（jinja)によって読み込まれ，処理される．
+Javascript，HTML/CSSと，jinja用スクリプトによって書かれている．
 \begin{description}
 \item[ui/templates/outerlayout.html] Webページ全体のレイアウト用テンプレート\\
-	このテンプレートファイルは、アプリケーションが出力する全てのWebページに適応される。\\
+	このテンプレートファイルは，アプリケーションが出力する全てのWebページに適応される．\\
 	\lstinputlisting[caption=全体のレイアウト用テンプレート,label=outerl]{src/ui/templates/outerlayout.html}
 \item[ui/templates/layout.html] ログインページを除くWebページ用のテンプレート\\
-	このテンプレートファイルは、ログインページ以外のWebページに適応される。\\
+	このテンプレートファイルは，ログインページ以外のWebページに適応される．\\
 	\lstinputlisting[caption=レイアウト用テンプレート,label=layout]{src/ui/templates/layout.html}
 \item[ui/templates/login.html] ログインページ\\
 	\lstinputlisting[caption=ログインページ,label=login]{src/ui/templates/login.html}
