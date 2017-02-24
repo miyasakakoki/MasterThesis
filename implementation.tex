@@ -75,7 +75,7 @@ IoT機器から，トークンが送られてきた場合，インターフェ�
 
 図\ref{interface_flow2}は，エージェントプログラムから機器の状態が通知されてきた場合の動作である．
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/interface_flow2.png}
+\includegraphics[width=8cm]{images/interface_flow2.png}
 \caption{エージェントプログラム用インターフェースの動作（機器からの状態の通知があった際）}
 \label{fig:interface_flow2}
 \end{figure}
@@ -104,12 +104,12 @@ IoT機器から，トークンが送られてきた場合，インターフェ�
 エージェントプログラムとエージェントプログラム用インターフェース間の通信には，HTTPSを用いる．
 機器IDの取得/発行・登録時は図\ref{fig:inter_program_regist}のような動作をし，機器状態の通知/監視の際は，図\ref{fig:inter_program_monit}のような動作をする．
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/inter_program_regist.png}
+\includegraphics[width=8cm]{images/inter_program_regist.png}
 \caption{機器IDの取得/発行・登録時の通信}
 \label{fig:inter_program_regist}
 \end{figure}
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/inter_program_monit.png}
+\includegraphics[width=8cm]{images/inter_program_monit.png}
 \caption{機器状態の通知/監視時の通信}
 \label{fig:inter_program_monit}
 \end{figure}
@@ -154,7 +154,7 @@ InfluxDBでは，時刻を主キー(index)として扱うので，このよう�
 ユーザテーブル，機器情報テーブルの２つのテーブルが有り，ユーザに関する情報と，機器に関する情報を分けて記録する．
 図\ref{fig:erdiagrm}は，ユーザテーブルと機器情報テーブルの関連を表す．
 \begin{figure}[htbp]
-\includegraphics[width=16cm]{images/ERdiagram.png}
+\includegraphics[width=8cm]{images/ERdiagram.png}
 \caption{ユーザテーブルと機器情報テーブルの関連}
 \label{fig:erdiagram}
 \end{figure}
