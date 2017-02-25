@@ -17,7 +17,7 @@ thesis.pdf: *.tex images/*.png
 
 .PHONY: clean
 clean:
-	rm *.log *.dvi *.aux *.toc
+	rm *.log *.dvi *.aux *.toc *.lof *.lot
 
 .PHONY: allc
 allc:
